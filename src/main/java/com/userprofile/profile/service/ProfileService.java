@@ -17,6 +17,7 @@ public class ProfileService {
 
     public Profile createProfile(Profile profile) {
         profileRepository.save(profile);
+        log.info("TEST");
         return profile;
     }
 }
