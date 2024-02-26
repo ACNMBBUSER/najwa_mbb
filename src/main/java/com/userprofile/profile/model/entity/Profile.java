@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity(name = "Profile")
 @Table(name = "Profile", schema = "user_profile")
@@ -18,7 +18,7 @@ public class Profile {
     @Id
     @Column(name = "thingID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private long userId;
 
     @Column(name = "email")
     private String email;
@@ -31,7 +31,7 @@ public class Profile {
 
     @Column(name = "date_of_birth")
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @Column(name = "age")
     private int age;
