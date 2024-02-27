@@ -17,7 +17,6 @@ import java.util.concurrent.CompletableFuture;
 public class CatFactService {
 
     ResponseHandler<CatFactResponse> responseHandler = new ResponseHandler<>();
-   // String catUrl="https://catfact.ninja/fact";
 
     private final Environment environment;
 

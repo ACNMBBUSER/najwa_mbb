@@ -22,7 +22,7 @@ public class ProfileService {
     @Autowired
     private ProfileRepository profileRepository;
     ResponseHandler<Profile> responseHandler = new ResponseHandler<>();
-    public ResponseEntity<?> createProfile(Profile profile) {
+    public ResponseEntity<ResponseHandler> createProfile(Profile profile) {
 
         if (profile.getEmail() == null) {
             return ResponseEntity.ok(responseHandler.generateFailResponse("Email must not be null"));
@@ -50,7 +50,7 @@ public class ProfileService {
         return optionalProfile.orElse(null);
     }
 
-    public ResponseEntity<?> updateProfile(Long userId, Profile profile) {
+    public ResponseEntity<ResponseHandler> updateProfile(Long userId, Profile profile) {
 
         Optional<Profile> optionalProfile = profileRepository.findById(userId);
 

@@ -21,17 +21,17 @@ public class ProfileController {
     ResponseHandler<Profile> responseHandler = new ResponseHandler<>();
 
     @PostMapping("/create")
-    public ResponseEntity<?> createProfile(@RequestBody Profile profile) {
+    public ResponseEntity<ResponseHandler> createProfile(@RequestBody Profile profile) {
         return profileService.createProfile(profile);
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<?> getThings(){
+    public ResponseEntity<ResponseHandler> getThings(){
         return ResponseEntity.ok(responseHandler.generateSuccessResponse(profileService.getAllProfiles()));
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<?> fetchThingById(@PathVariable long id){
+    public ResponseEntity<ResponseHandler> fetchThingById(@PathVariable long id){
         if (profileService.getProfileById(id) != null){
             return ResponseEntity.ok(responseHandler.generateSuccessResponse(profileService.getProfileById(id)));
         }else{
@@ -41,7 +41,7 @@ public class ProfileController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateProfile(@PathVariable long id, @RequestBody Profile profile){
+    public ResponseEntity<ResponseHandler> updateProfile(@PathVariable long id, @RequestBody Profile profile){
         return profileService.updateProfile(id,profile);
     }
 
