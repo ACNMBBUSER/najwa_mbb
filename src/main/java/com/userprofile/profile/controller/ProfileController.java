@@ -20,10 +20,10 @@ public class ProfileController {
 
     ResponseHandler<Profile> responseHandler = new ResponseHandler<>();
 
-    @PostMapping("/create")
-    public ResponseEntity<ResponseHandler> createProfile(@RequestBody Profile profile) {
-        return profileService.createProfile(profile);
-    }
+//    @PostMapping("/create")
+//    public ResponseEntity<ResponseHandler> createProfile(@RequestBody Profile profile) {
+//        return profileService.createProfile(profile);
+//    }
 
     @GetMapping("/getAll")
     public ResponseEntity<ResponseHandler> getThings(){
